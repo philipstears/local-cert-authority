@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+mkdir -p out/ca
+
+openssl req -x509 -nodes -new -sha256 -days 3650 -newkey rsa:2048 -keyout out/ca/key -out out/ca/cert -subj "/C=US/CN=Personal-Development-CA"
